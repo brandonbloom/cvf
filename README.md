@@ -1,13 +1,15 @@
 # cvf
 
-A Clojure library designed to ... well, that part is up to you.
+This is a very hastily hacked together little Clojure web app to plot _# of Contributors_ vs _# of Forks_ for GitHub projects.
 
-## Usage
+It's [running on Heroku](http://boiling-inlet-6842.herokuapp.com/)
 
-FIXME
+There is no persistence, so it may or may not have data in it depending on whether or not it crashes.
+
+Please play nice :-)
 
 ## License
 
-Copyright © 2013 FIXME
+Copyright © 2013 Brandon Bloom
 
-Distributed under the Eclipse Public License, the same as Clojure.
+Distributed under The MIT License.
