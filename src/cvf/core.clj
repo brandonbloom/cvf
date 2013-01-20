@@ -3,9 +3,12 @@
             [tentacles.repos :refer (specific-repo contributors)]
             [clojure.walk :refer (postwalk)]))
 
+(defn get-auth []
+  (or (System/getenv "GITHUB_AUTH") (.trim (slurp "auth"))))
+
 (def options {:per-page 100
               :all-pages true
-              :auth (.trim (slurp "auth"))})
+              :auth (get-auth)})
 
 (def db (atom {}))
 
