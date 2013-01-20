@@ -8,6 +8,10 @@ There is no persistence, so it may or may not have data in it depending on wheth
 
 Please play nice :-)
 
+# Example plot
+
+![example plot](https://github.com/brandonbloom/cvf/blob/master/example.png?raw=true "Example Plot")
+
 ## License
 
 Copyright © 2013 Brandon Bloom
