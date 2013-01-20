@@ -6,6 +6,8 @@
   :dependencies [[org.clojure/clojure "1.4.0"]
                  [tentacles "0.2.4"]
                  [compojure "1.1.5"]
-                 [hiccup "1.0.2"]]
+                 [hiccup "1.0.2"]
+                 [ring/ring-jetty-adapter "1.0.3"]]
   :ring {:handler cvf.web/handler}
+  :main cvf.web
   :plugins [[lein-ring "0.8.1"]])

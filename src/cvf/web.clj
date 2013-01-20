@@ -1,10 +1,14 @@
 (ns cvf.web
   (:use [compojure.core])
-  (:require [compojure.handler :as handler]
+  (:require [clojure.pprint :refer (pprint)]
+            [compojure.handler :as handler]
             [compojure.route :as route]
             [ring.util.response :as response]
+            [ring.adapter.jetty :refer (run-jetty)]
             [cvf.core :as cvf]
-            [hiccup.def :refer (defhtml)]))
+            [hiccup.def :refer (defhtml)]
+            [clojure.java.io :as io])
+  (:gen-class))
 
 (defhtml graph-script [stats]
   (let [max-forks (->> stats (map :forks) (apply max 0))
@@ -100,3 +104,7 @@
 
 (def handler
   (handler/site app-routes))
+
+(defn -main [& args]
+  (let [port (Integer/parseInt (or (System/getenv "PORT") "3000"))]
+    (run-jetty handler {:port port})))
