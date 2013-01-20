@@ -12,7 +12,7 @@
 
 (def db (atom {}))
 
-(def repo-re #"(?i)^([a-z0-9]+)/([a-z0-9]+)$")
+(def repo-re #"(?i)^([a-z0-9-_]+)/([a-z0-9-_]+)$")
 
 (defn clean [data]
   (postwalk
