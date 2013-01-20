@@ -27,7 +27,7 @@
   (if-let [[_ user repo] (re-matches repo-re qualified-name)]
     (let [data {:info (specific-repo user repo options)
                 :contributors (contributors user repo options)}]
-      (if (some :message (vals data))
+      (if (some #(or (:message %) (:status %)) (vals data))
         :github-error
         (let [id (-> data :info :id)
               data (clean data)]
